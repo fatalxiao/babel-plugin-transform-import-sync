@@ -14,19 +14,13 @@ const expect = chai.expect,
 describe('Transform Test', () => {
 
     it('default', () =>
-        expect(transform(`
+        expect(JSON.stringify(transform(`
             module.exports = [{
                 path: '/',
                 exact: true,
                 component: asyncComponent(() => import(/* webpackChunkName: "root" */'./container/root'))
             }];
-        `, options)).to.be.equal(`
-            module.exports = [{
-                path: '/',
-                exact: true,
-                component: asyncComponent(() => (function() {const component = require('./container/root'); return component.default || component;})())
-            }];
-        `)
+        `, options))).to.include(`component: asyncComponent(() => function () {\\n        const component = require('./container/root');\\n\\n        return component.default || component;\\n    }())`)
     );
 
 });
