@@ -1,0 +1,23 @@
+{
+    "name": "babel-plugin-transform-import-sync",
+    "author": "falalxiao",
+    "version": "0.0.1",
+    "description": "A babel plugin yo transform import to sync.",
+    "main": "./src/index.js",
+    "scripts": {
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/fatalxiao/babel-plugin-transform-import-sync"
+    },
+    "keywords": [
+        "babel",
+        "plugin",
+        "transform",
+        "import"
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fatalxiao/babel-plugin-transform-import-sync/issues"
+    }
+}
