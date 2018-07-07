@@ -1,8 +1,11 @@
 # babel-plugin-transform-import-sync
 
+[![CircleCI Status][circleci-image]][circleci-url]
 [![NPM Version][npm-image]][npm-url]
 [![License][license-image]][npm-url]
 
+[circleci-image]: https://circleci.com/gh/fatalxiao/babel-plugin-transform-import-sync.svg?style=shield&circle-token=:circle-token
+[circleci-url]: https://circleci.com/gh/fatalxiao/babel-plugin-transform-import-sync
 [npm-image]: https://img.shields.io/npm/v/babel-plugin-transform-import-sync.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/babel-plugin-transform-import-sync
 [license-image]: https://img.shields.io/npm/l/babel-plugin-transform-import-sync.svg?style=flat-square
