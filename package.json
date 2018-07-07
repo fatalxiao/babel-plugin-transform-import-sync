@@ -6,6 +6,7 @@
     "main": "./src/index.js",
     "scripts": {
         "pre-publish": "rimraf dist && gulp copy",
+        "do-publish": "npm run pre-publish && cd dist && npm publish",
         "test": "mocha $NODE_DEBUG_OPTION test/*.test.js --require babel-core/register"
     },
     "repository": {
@@ -37,6 +38,8 @@
         "gulp-sequence": "^1.0.0",
         "gulp-util": "^3.0.8",
         "mocha": "^5.2.0",
+        "react": "^16.4.1",
+        "react-dom": "^16.4.1",
         "rimraf": "^2.6.2"
     }
 }
