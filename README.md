@@ -1,6 +1,13 @@
 # babel-plugin-transform-import-sync
 
-A babel plugin to transform import to sync.
+[![NPM Version][npm-image]][npm-url]
+[![License][license-image]][npm-url]
+
+[npm-image]: https://img.shields.io/npm/v/babel-plugin-transform-import-sync.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/babel-plugin-transform-import-sync
+[license-image]: https://img.shields.io/npm/l/babel-plugin-transform-import-sync.svg?style=flat-square
+
+A babel plugin to transform async import to sync.
 
 ## Installation
 
