@@ -2,7 +2,7 @@
     "name": "babel-plugin-transform-import-sync",
     "author": "falalxiao",
     "version": "1.0.0",
-    "description": "A babel plugin to transform import to sync.",
+    "description": "A babel plugin to transform async import to sync.",
     "main": "./src/index.js",
     "scripts": {
         "pre-publish": "rimraf dist && gulp copy",
