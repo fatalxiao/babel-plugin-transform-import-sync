@@ -2,6 +2,7 @@
 
 import chai from 'chai';
 import {transform} from 'babel-core';
+import Root from './container/Root';
 
 const expect = chai.expect,
     options = {
@@ -13,14 +14,22 @@ const expect = chai.expect,
 
 describe('Transform Test', () => {
 
-    it('default', () =>
-        expect(JSON.stringify(transform(`
-            module.exports = [{
-                path: '/',
-                exact: true,
-                component: asyncComponent(() => import(/* webpackChunkName: "root" */'./container/root'))
-            }];
-        `, options))).to.include(`component: asyncComponent(() => function () {\\n        const component = require('./container/root');\\n\\n        return component.default || component;\\n    }())`)
-    );
+    it('default', () => expect(eval(transform(`
+        const asyncComponent = require('./vendors/asyncComponent').default;
+        module.exports = [{
+            path: '/',
+            exact: true,
+            component: asyncComponent(() => import('./container/Root'))
+        }];
+    `, options).code)[0].component).to.be.equal(Root));
+
+    it('with comment', () => expect(eval(transform(`
+        const asyncComponent = require('./vendors/asyncComponent').default;
+        module.exports = [{
+            path: '/',
+            exact: true,
+            component: asyncComponent(() => import(/* webpackChunkName: "root" */'./container/Root'))
+        }];
+    `, options).code)[0].component).to.be.equal(Root));
 
 });
