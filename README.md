@@ -6,9 +6,9 @@
 
 [circleci-image]: https://circleci.com/gh/fatalxiao/babel-plugin-transform-import-sync.svg?longCache=true&style=shield&circle-token=:circle-token
 [circleci-url]: https://circleci.com/gh/fatalxiao/babel-plugin-transform-import-sync
-[npm-image]: https://img.shields.io/npm/v/babel-plugin-transform-import-sync.svg?longCache=true&style=flat-square
+[npm-image]: https://img.shields.io/npm/v/babel-plugin-transform-import-sync.svg?longCache=true&style=shield
 [npm-url]: https://npmjs.org/package/babel-plugin-transform-import-sync
-[license-image]: https://img.shields.io/npm/l/babel-plugin-transform-import-sync.svg?longCache=true&style=flat-square
+[license-image]: https://img.shields.io/npm/l/babel-plugin-transform-import-sync.svg?longCache=true&style=shield
 
 A babel plugin to transform async import to sync.
 
