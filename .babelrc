@@ -4,13 +4,6 @@
         "stage-0",
         "react"
     ],
-    "env": {
-        "development": {
-            "presets": [
-                "react-hmre"
-            ]
-        }
-    },
     "plugins": [
         "transform-decorators-legacy"
     ]
