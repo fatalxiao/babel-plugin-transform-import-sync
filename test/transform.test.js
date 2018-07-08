@@ -15,7 +15,12 @@ const expect = chai.expect,
 
 describe('Transform Test', () => {
 
-    it('default', () => expect(eval(transform(`
+    /**
+     * basic test
+     *
+     *  import('./container/Root')
+     */
+    it('basic', () => expect(eval(transform(`
         const asyncComponent = require('./vendors/asyncComponent').default;
         module.exports = [{
             path: '/',
@@ -23,7 +28,13 @@ describe('Transform Test', () => {
         }];
     `, options).code)[0].component).to.be.equal(Root));
 
-    it('with comment', () => expect(eval(transform(`
+
+    /**
+     * test one with a chunk comment
+     *
+     *  import(\/* webpackChunkName: "root" *\/'./container/Root')
+     */
+    it('with a chunk comment', () => expect(eval(transform(`
         const asyncComponent = require('./vendors/asyncComponent').default;
         module.exports = [{
             path: '/',
@@ -31,6 +42,10 @@ describe('Transform Test', () => {
         }];
     `, options).code)[0].component).to.be.equal(Root));
 
+
+    /**
+     * test multi routes
+     */
     const multiRoute = eval(transform(`
         const asyncComponent = require('./vendors/asyncComponent').default;
         module.exports = [{
@@ -41,7 +56,6 @@ describe('Transform Test', () => {
             component: asyncComponent(() => import(/* webpackChunkName: "other" */'./container/Other'))
         }];
     `, options).code);
-
     it('multi routes - 0', () => expect(multiRoute[0].component).to.be.equal(Root));
     it('multi routes - 1', () => expect(multiRoute[1].component).to.be.equal(Other));
 
