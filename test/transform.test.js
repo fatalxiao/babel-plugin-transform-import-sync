@@ -30,7 +30,7 @@ describe('Transform Test', () => {
 
 
     /**
-     * test one with a chunk comment
+     * test one with a chunk comment, and comment will be removed
      *
      *  import(\/* ... *\/'...')
      */
