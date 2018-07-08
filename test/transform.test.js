@@ -18,7 +18,7 @@ describe('Transform Test', () => {
     /**
      * basic test
      *
-     *  import('./container/Root')
+     *  import('...')
      */
     it('basic', () => expect(eval(transform(`
         const asyncComponent = require('./vendors/asyncComponent').default;
@@ -32,7 +32,7 @@ describe('Transform Test', () => {
     /**
      * test one with a chunk comment
      *
-     *  import(\/* webpackChunkName: "root" *\/'./container/Root')
+     *  import(\/* ... *\/'...')
      */
     it('with a chunk comment', () => expect(eval(transform(`
         const asyncComponent = require('./vendors/asyncComponent').default;
@@ -58,5 +58,20 @@ describe('Transform Test', () => {
     `, options).code);
     it('multi routes - 0', () => expect(multiRoute[0].component).to.be.equal(Root));
     it('multi routes - 1', () => expect(multiRoute[1].component).to.be.equal(Other));
+
+
+    /**
+     * test one with an asyncComponent config
+     *
+     *  asyncComponent(() => import('...'), config)
+     */
+    it('with an asyncComponent config', () => expect(eval(transform(`
+        const asyncComponent = require('./vendors/asyncComponent').default,
+              config = {/* ... */};
+        module.exports = [{
+            path: '/',
+            component: asyncComponent(() => import(/* webpackChunkName: "root" */'./container/Root'), config)
+        }];
+    `, options).code)[0].component).to.be.equal(Root));
 
 });
