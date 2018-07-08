@@ -22,7 +22,7 @@ $ npm install babel-plugin-transform-import-sync --save-dev
 
 ## Usage
 
-Use in `.babelrc`.
+In `.babelrc`.
 
 ```json
 {
