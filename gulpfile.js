@@ -4,7 +4,7 @@ const gulp = require('gulp'),
     miniPackageJson = require('./scripts/gulp-mini-package-json');
 
 gulp.task('copyES', () => gulp.src('./src/**/*.js')
-    .pipe(babel({plugins: ['transform-runtime']})).pipe(gulp.dest('./dist'))
+    .pipe(babel({plugins: ['@babel/plugin-transform-runtime']})).pipe(gulp.dest('./dist'))
 );
 
 /**
