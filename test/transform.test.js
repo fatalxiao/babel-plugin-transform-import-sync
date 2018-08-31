@@ -1,14 +1,14 @@
 'use strict';
 
 import chai from 'chai';
-import {transform} from 'babel-core';
+import {transform} from '@babel/core';
 import Root from './container/Root';
 import Other from './container/Other';
 
 const expect = chai.expect,
     options = {
         plugins: [
-            'syntax-dynamic-import',
+            '@babel/plugin-syntax-dynamic-import',
             './src'
         ]
     };
