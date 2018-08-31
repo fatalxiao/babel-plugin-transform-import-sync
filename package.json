@@ -7,7 +7,7 @@
     "scripts": {
         "pre-publish": "rimraf dist && gulp copy",
         "do-publish": "npm run pre-publish && cd dist && npm publish",
-        "test": "mocha $NODE_DEBUG_OPTION test/*.test.js --require babel-core/register"
+        "test": "mocha $NODE_DEBUG_OPTION test/*.test.js --require @babel/register"
     },
     "repository": {
         "type": "git",
