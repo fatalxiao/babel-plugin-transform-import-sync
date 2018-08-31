@@ -1,9 +1,14 @@
 module.exports = {
     'presets': [
-        'env',
-        'react'
+        '@babel/preset-env',
+        '@babel/preset-react'
     ],
     'plugins': [
-        '@babel/plugin-proposal-decorators'
+        [
+            '@babel/plugin-proposal-decorators',
+            {
+                'legacy': true
+            }
+        ]
     ]
 };
